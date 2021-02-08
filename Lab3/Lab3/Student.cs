@@ -13,14 +13,16 @@ namespace Lab3
         String department ;
         float cgpa;
 
-        Student()
+       public Student()
         {
             Console.WriteLine("This is a constructor with one parameter");
         }
 
-        Student(String name , String id)
+       public  Student(String name , String id)
         {
             Console.WriteLine("This is a constructor with two parameter");
+            this.name = name;
+            this.id = id;
         }
 
         public String Name
