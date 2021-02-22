@@ -8,10 +8,20 @@ namespace Lab5
 {
     class Savings : Account
     {
-        int balance =430 ;
-        public void Withdraw(int amount)
+        
+
+        public Savings(string accName, string accid, int balance)
         {
-            if (amount > 430)
+            this.AccName = accName;
+            this.Accid = accid;
+            this.Balance = balance;
+        }
+
+
+        int balance =430 ;
+        new public void  Withdraw(int amount)
+        {
+            if (amount < 430)
             {
                 balance = balance - amount;
                 Console.WriteLine(amount + " Money withdrow");
@@ -21,6 +31,9 @@ namespace Lab5
                 Console.WriteLine("Not sufficient Balance");
             }
         }
-
+       
+        new public void showInfo(){
+            base.showInfo();
+        }
     }
 }

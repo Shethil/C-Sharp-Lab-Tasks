@@ -8,12 +8,19 @@ namespace Lab5
 {
     class SprcialCurrent : Account
     {
+        public SprcialCurrent(string accName, string accid, int balance)
+        {
+            this.AccName = accName;
+            this.Accid = accid;
+            this.Balance = balance;
+        }
+
         int openinBalance;
-        public void Withdraw(int amount)
+        new public void Withdraw(int amount)
         {
             this.openinBalance = Balance;
 
-            if (amount > openinBalance*0.1)
+            if (amount < openinBalance*0.1)
             {
                 Balance = Balance - amount;
                 Console.WriteLine(amount + " Money withdrow");
@@ -22,6 +29,10 @@ namespace Lab5
             {
                 Console.WriteLine("Under 10% balance");
             }
+        }
+        new public void showInfo()
+        {
+            base.showInfo();
         }
        
     }

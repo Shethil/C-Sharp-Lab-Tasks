@@ -6,15 +6,23 @@ using System.Threading.Tasks;
 
 namespace Lab5 
 {
-    class Fixed : Account 
+   class Fixed : Account 
     {
         int tenureYear = 10 ;
-        int balance;
-        public void Withdraw(int amount)
+       
+
+        public Fixed(string accName, string accid, int balance)
+        {
+            this.AccName = accName;
+            this.Accid = accid;
+            this.Balance = balance;
+        }
+
+        new public void Withdraw(int amount)
         {
             if (tenureYear >= 10)
             {
-                this.balance= Balance ;
+                this.Balance= Balance ;
                 Balance = Balance - amount;
                 Console.WriteLine(amount + " Money withdrow");
             }
@@ -23,5 +31,9 @@ namespace Lab5
                 Console.WriteLine("Withdraw money");
             }
         }
-    }
+        new public void showInfo()
+        {
+            base.showInfo();
+        }
+    } 
 }

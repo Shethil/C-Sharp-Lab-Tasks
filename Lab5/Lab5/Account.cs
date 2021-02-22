@@ -61,7 +61,7 @@ namespace Lab5
 
         public void Transfer(int amount, Account a1, Account b1)
         {
-            if (amount > a1.balance)
+            if (amount < a1.balance)
             {
                 a1.balance = a1.balance - amount;
                 b1.balance = b1.balance + amount;
@@ -72,6 +72,7 @@ namespace Lab5
                 Console.WriteLine("Not sufficient Balance");
             }
         }
+
         public void showInfo()
         {
             Console.WriteLine("Name is :" + AccName);
